@@ -4,6 +4,8 @@ target/
 !**/src/main/**
 !**/src/test/**
 
+src/main/frontend/node_modules
+
 ### STS ###
 .apt_generated
 .classpath
@@ -29,3 +31,4 @@ build/
 
 ### VS Code ###
 .vscode/
+
