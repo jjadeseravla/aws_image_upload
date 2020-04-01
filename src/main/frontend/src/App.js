@@ -3,16 +3,30 @@ import './App.css';
 import axios from 'axios';
 
 const UserProfiles = () => {
+
+  const [userProfiles, setUserProfiles] = useState([]);
+
   const fetchUserProfiles = () => {
     axios.get("http://localhost:1111/api/v1/user-profile").then(res => {
       console.log(res);
+      setUserProfiles(res.data);
     });
-  }
+  };
+
   useEffect(() => {
     fetchUserProfiles();
   }, []);
-  return <h1>Jade</h1>
-}
+
+  return userProfiles.map((userProfile, index) => {
+
+    return (
+      <div key={index}>
+        <h1>{userProfile.userName}</h1>
+         <p>{userProfile.userProfileId}</p>
+      </div>
+    )
+  })
+};
 
 function App() {
   return (
