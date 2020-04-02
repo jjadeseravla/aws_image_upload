@@ -51,11 +51,12 @@ function Dropzone({ userProfileId }) {
                     "Content-Type": "multipart/form-data"
                 }//everything we need to send files to our server
             }
-        ).then(() => {
-            console.log("File uploaded successfully")
-        }).catch(err => {
-            console.log(err);
-        });
+
+        // ).then(() => {
+        //     console.log("File uploaded successfully")
+        // }).catch(err => {
+        //     console.log(err);
+        // });
 
     }, []);
 
