@@ -44,12 +44,15 @@ function Dropzone({ userProfileId }) {
         const formData = new FormData();
         formData.append("file", file);
 
+        console.log('worrrrrk')
         axios.post(
             `http://localhost:1111/api/v1/user-profile/${userProfileId}/image/upload`),
             formData,
             {
                 headers: {
-                    "Content-Type": "multipart/form-data"
+                    //"set Access-Control-Allow-Origin": "*",
+                    "Content-Type": "application/x-www-form-urlencoded",
+                    //"Content-Type": "multipart/form-data"
                 }//everything we need to send files to our server
             }
 

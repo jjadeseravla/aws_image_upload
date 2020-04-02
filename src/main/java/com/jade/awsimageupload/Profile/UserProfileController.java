@@ -10,7 +10,7 @@ import java.util.UUID;
 
 @RestController
 @RequestMapping("api/v1/user-profile")
-@CrossOrigin("*") //cos we are testing things locally, not to do in prod!!!
+@CrossOrigin(origins = "*") //cos we are testing things locally, not to do in prod!!!
 public class UserProfileController {
 
     private final UserProfileService userProfileService;
@@ -26,7 +26,7 @@ public class UserProfileController {
         return userProfileService.getUserProfiles();
     }
 
-
+    @CrossOrigin(origins = "*")
     @PostMapping(
         path = "{userProfileId}/image/upload",
         consumes = MediaType.MULTIPART_FORM_DATA_VALUE,
